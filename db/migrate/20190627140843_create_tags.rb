@@ -6,6 +6,6 @@ class CreateTags < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    create_join_table :links, :tags
+    create_join_table :spaces, :tags
   end
 end

@@ -17,18 +17,12 @@
 #                           DELETE /auth(.:format)                                                                          devise_token_auth/registrations#destroy
 #                           POST   /auth(.:format)                                                                          devise_token_auth/registrations#create
 #       auth_validate_token GET    /auth/validate_token(.:format)                                                           devise_token_auth/token_validations#validate_token
-#        api_v1_user_spaces GET    /api/v1/users/:user_id/spaces(.:format)                                                  api/v1/spaces#index
-#                           POST   /api/v1/users/:user_id/spaces(.:format)                                                  api/v1/spaces#create
-#         api_v1_user_space GET    /api/v1/users/:user_id/spaces/:id(.:format)                                              api/v1/spaces#show
-#                           PATCH  /api/v1/users/:user_id/spaces/:id(.:format)                                              api/v1/spaces#update
-#                           PUT    /api/v1/users/:user_id/spaces/:id(.:format)                                              api/v1/spaces#update
-#                           DELETE /api/v1/users/:user_id/spaces/:id(.:format)                                              api/v1/spaces#destroy
-#        api_v1_space_links GET    /api/v1/spaces/:space_id/links(.:format)                                                 api/v1/links#index
-#                           POST   /api/v1/spaces/:space_id/links(.:format)                                                 api/v1/links#create
-#         api_v1_space_link GET    /api/v1/spaces/:space_id/links/:id(.:format)                                             api/v1/links#show
-#                           PATCH  /api/v1/spaces/:space_id/links/:id(.:format)                                             api/v1/links#update
-#                           PUT    /api/v1/spaces/:space_id/links/:id(.:format)                                             api/v1/links#update
-#                           DELETE /api/v1/spaces/:space_id/links/:id(.:format)                                             api/v1/links#destroy
+#             api_v1_spaces GET    /api/v1/spaces(.:format)                                                                 api/v1/spaces#index
+#                           POST   /api/v1/spaces(.:format)                                                                 api/v1/spaces#create
+#              api_v1_space GET    /api/v1/spaces/:id(.:format)                                                             api/v1/spaces#show
+#                           PATCH  /api/v1/spaces/:id(.:format)                                                             api/v1/spaces#update
+#                           PUT    /api/v1/spaces/:id(.:format)                                                             api/v1/spaces#update
+#                           DELETE /api/v1/spaces/:id(.:format)                                                             api/v1/spaces#destroy
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
 #        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
@@ -41,12 +35,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :users, only: [] do
-        resources :spaces
-      end
-
-      resources :spaces, only: [] do
-        resources :links
+      resources :spaces do
+        #resources :tags
       end
 
     end

@@ -12,28 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2019_06_27_140843) do
 
-  create_table "links", force: :cascade do |t|
-    t.string "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "links_spaces", id: false, force: :cascade do |t|
-    t.integer "link_id", null: false
-    t.integer "space_id", null: false
-  end
-
-  create_table "links_tags", id: false, force: :cascade do |t|
-    t.integer "link_id", null: false
-    t.integer "tag_id", null: false
-  end
-
   create_table "spaces", force: :cascade do |t|
     t.string "name"
+    t.string "url"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_spaces_on_user_id"
+  end
+
+  create_table "spaces_tags", id: false, force: :cascade do |t|
+    t.integer "space_id", null: false
+    t.integer "tag_id", null: false
   end
 
   create_table "tags", force: :cascade do |t|
