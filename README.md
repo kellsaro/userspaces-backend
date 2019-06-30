@@ -1,24 +1,13 @@
-# README
+# Userspaces-backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Backend API for userspaces-frontend.
 
-Things you may want to cover:
+Requirements
+  * Ruby version 2.6.3
+  * Rails 5.2.3
+Instructions:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ * Download this repository
+ * Go to the download folder
+ * Run the command `bundle install`
+ * Start the server in development mode `rails s -p 3001`
