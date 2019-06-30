@@ -2,9 +2,11 @@
 
 Backend API for userspaces-frontend.
 
-Requirements
+Requirements:
+
   * Ruby version 2.6.3
   * Rails 5.2.3
+  
 Instructions:
 
  * Download this repository
